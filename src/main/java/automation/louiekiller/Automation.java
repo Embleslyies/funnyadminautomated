@@ -30,7 +30,9 @@ public class Automation implements ModInitializer {
 		LOGGER.info("Hello Fabric world!");
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+			// dispatcher class registers an event
 			dispatcher.register(Commands.literal("test_command").executes(context -> {
+				// idfk what this does lmao
 				context.getSource().sendSuccess(() -> Component.literal("Called /test_command."), false);
 				return 1;
 			}));
